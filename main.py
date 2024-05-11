@@ -72,6 +72,8 @@ async def lol(data: InputData2):
     t = int(time.time())
     req = requests.post(f"https://{host}/api/webapi/GetUserInfo",json={"signature":sig,"language":0,"random":rd,"timestamp":t},headers={"Authorization": f"Bearer {tk}"}).text
     amount = fd(req, 'amount":',',')
+    print(req)
+    print(amount)
     req2 = requests.post(f"https://{host}/api/webapi/getWithdrawals",json={"withdrawid":1,"language":0,"random":"fb1462bcf2aa442d893fd07f6772dc87","signature":"56C1DE16B258011E6945437A922AD88C","timestamp":t},headers={"Authorization": f"Bearer {tk}"}).text
     if "lastBandCarkName\":null" in req2:
         bank = "NO"

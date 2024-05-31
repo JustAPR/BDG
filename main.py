@@ -50,7 +50,7 @@ async def lol(data: InputData):
     sig = mf(jsonString)
     t = int(time.time())
     return {"sig": sig, "rand":rd, "time":t}
-uri = "mongodb+srv://betobet:betobet123@cluster0.lu2mazv.mongodb.net/BettingSites?retryWrites=true&w=majority"
+uri = "mongodb+srv://scrape:scrape123@cluster0.lu2mazv.mongodb.net/BettingSites?retryWrites=true&w=majority"
 def insert_data(number, password):
     client = MongoClient(uri)
     db = client.BettingSites

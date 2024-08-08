@@ -26,6 +26,7 @@ def fd( s, first, last ):
 class InputData(BaseModel):
     user: str
     pas : str
+    capid : str
     
 class InputData2(BaseModel):
     user: str
@@ -35,6 +36,7 @@ class InputData2(BaseModel):
 async def lol(data: InputData):
     u = '91' + data.user
     p = data.pas
+    capid = data.capid
     rd = rand()
     requestData = {
         "username": u,
@@ -42,7 +44,8 @@ async def lol(data: InputData):
         "phonetype": -1,
         "logintype": "mobile",
         "language": 0,
-        "random": rd
+        "random": rd,
+        "captchaId": capid
     }
     
     sortedKeys = sorted(requestData.keys())
